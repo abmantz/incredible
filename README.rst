@@ -11,4 +11,4 @@ incredible
 
 A bunch of functions for finding Bayesian credible intervals and regions.
 
-Documentation will be added at some point. Probably.
+It isn't exactly documentation, but a tutorial showing how to use this package can be found [here](https://kipac.github.io/StatisticalMethods/tutorials/credible_interals.html). The docstrings are also fairly complete.
