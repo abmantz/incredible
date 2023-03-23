@@ -95,7 +95,7 @@ def ci1D_plot(h, ci, plot, plot_mode=True, plot_levels=True, plot_ci=True, fill_
         if plot_ci:
             kw = {'color':'b', 'marker':'', 'linestyle':'-'}
             for k in ci_kwargs.keys():
-                kw[k] = fill_kwargs[k]
+                kw[k] = ci_kwargs[k]
             plot.plot([ci['min'][i],ci['min'][i]], [0.0,ci['density'][i]], **kw);
             plot.plot([ci['max'][i],ci['max'][i]], [0.0,ci['density'][i]], **kw);
         if plot_levels:
