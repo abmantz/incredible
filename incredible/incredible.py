@@ -298,7 +298,7 @@ def whist_triangle_plot(tri, paramNames=None, axes=None, ranges=None, Pmin=0.0,
                         Pmax=None, density_label=None, width=5.0,
                         grid=False, label_kwargs=None, tick_kwargs=None,
                         skip1D = False, skip2D=False,
-                        linecolor1D='k', fill1D=False, fillcolors1D=None,
+                        linecolor1D='k', linestyle1D='-', fill1D=False, fillcolors1D=None,
             linecolor2D='k', linestyle2D='-', fill2D=True, fillcolors2D=None,
                         ci1D_kwargs=None, ci2D_kwargs=None):
     """
@@ -314,7 +314,7 @@ def whist_triangle_plot(tri, paramNames=None, axes=None, ranges=None, Pmin=0.0,
     the level of the corresponding credible region.
 
     Specific defaults not obvious from the above:
-    * density_label = r'$p(' + paramNames[0] + '|\mathrm{data})$'
+    * density_label = r'$p($' + paramNames[0] + r'$|\mathrm{data})$'
     * label_kwargs = {'size':12}
     * tick_kwargs = {'labelsize':10, 'length':3}
     * ci1D_kwargs = {'plot_mode':False, 'plot_levels':False, 'plot_ci':False}
@@ -332,7 +332,7 @@ def whist_triangle_plot(tri, paramNames=None, axes=None, ranges=None, Pmin=0.0,
         Pmax = [None]*n
     # label for the upper-left y axis
     if density_label is None and paramNames is not None:
-        density_label = r'$p(' + paramNames[0] + '|\mathrm{data})$'
+        density_label = r'$p($' + paramNames[0] + r'$|\mathrm{data})$'
     if label_kwargs is None:
         label_kwargs = {'size':12}
     if tick_kwargs is None:
@@ -351,6 +351,10 @@ def whist_triangle_plot(tri, paramNames=None, axes=None, ranges=None, Pmin=0.0,
         d['color']
     except KeyError:
         d['color'] = linecolor1D
+    try:
+        d['linestyle']
+    except KeyError:
+        d['linestyle'] = linestyle1D
     try:
         d = ci2D_kwargs['Line2D_kwargs']
     except KeyError:
