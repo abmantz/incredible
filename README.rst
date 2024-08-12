@@ -11,6 +11,4 @@ incredible
 
 A bunch of functions for finding Bayesian credible intervals and regions. Now includes some functions to make diagnostic plots for Markov chains.
 
-It isn't exactly documentation, but a tutorial showing how to use this package can be found `here <https://kipac.github.io/StatisticalMethods/tutorials/credible_regions.html>`_. The docstrings are also fairly complete.
-
-Equally good "documentation" on the diagnostic functions can be found `here <https://kipac.github.io/StatisticalMethods/tutorials/mcmc_diagnostics.html>`_.
+It isn't exactly documentation, but a tutorials showing how to use this package can be found under "Credible Regions" and "MCMC Diagnostics" in `this course <https://kipac.github.io/StatisticalMethods/>`_. The docstrings are also fairly complete.
