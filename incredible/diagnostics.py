@@ -78,7 +78,7 @@ def GelmanRubinR(chains, return_all=False):
     else:
         return R
 
-def effective_samples(chains, maxlag=None, V=None):
+def effective_samples(chains, maxlag=None, V=None, throw=False):
     '''
     Computes the effective number of samples for each parameter in `chains`.
     `chains` is a list of numpy arrays, in which each column represents a parameter, and each row an MCMC step.
@@ -112,5 +112,8 @@ def effective_samples(chains, maxlag=None, V=None):
         else:
             neff[i] = m*n / (1.0 + 2.0*np.sum(rhot[0:j[0],i]))
     if warn:
-        print("Warning: effective_samples - set maglax higher if possible")
+        if throw:
+            raise Exception("effective_samples - maglax is not high enough")
+        else:
+            print("Warning: effective_samples - set maglax higher if possible")
     return neff
